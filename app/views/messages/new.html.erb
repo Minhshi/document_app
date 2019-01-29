@@ -1,8 +1,8 @@
 <h1>New Message</h1>
 
 <%= simple_form_for(@message) do |message| %>
-<%= message.input :topic %>
-<%= message.input :description, collection: ["contract", "other"], selected: "contract" %>
+<%= message.input :topic, collection: ["contract", "other"], selected: "contract" %>
+<%= message.input :description, placeholder: "description" %>
 <%= message.input :photo %>
 <%= message.input :photo_cache, as: :hidden %>
 <%= message.submit %>
