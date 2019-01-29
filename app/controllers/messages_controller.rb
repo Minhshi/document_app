@@ -5,10 +5,12 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
+    @message_attachment = MessageAttachment.new
   end
 
   def new
     @message = Message.new
+    @message_attachment = MessageAttachment.new
   end
 
   def create

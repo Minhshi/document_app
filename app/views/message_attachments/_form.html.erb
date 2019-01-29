@@ -1,0 +1,4 @@
+<%= simple_form_for [@message, @message_attachment], remote: true do |message_attachment| %>
+<%= message_attachment.input :photo %>
+<%= message_attachment.input :photo_cache, as: :hidden %>
+<% end %>
