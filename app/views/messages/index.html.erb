@@ -2,7 +2,7 @@
 
 <% @messages.each do |message| %>
 <ul>
-  <li><%= message.topic %></li>
+  <li><%= link_to message.topic, message_path(message) %></li>
 </ul>
 <% end %>
 
