@@ -17,6 +17,9 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user = current_user
     if @message.save
+      message_content = @message
+      MessageMailer.message_email(message_content).deliver_now
+      # @message.send_message_email
       redirect_to messages_path
     else
       render :new
