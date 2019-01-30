@@ -6,7 +6,7 @@ class MessageMailer < ApplicationMailer
   #   en.message_mailer.message_email.subject
   #
   def message_email(message_content)
-    message_content = @message
+    @message = message_content
     mail to: "mpham@naver.com", subject: "New Message"
   end
 end
