@@ -2,4 +2,10 @@
 
 <%= @message.topic %>
 <%= @message.description %>
+<%= @message.user.first_name %>
 
+<%= cl_image_tag("http://res.cloudinary.com/dmadox5xe/image/upload/v1548843751/gsnnfpn2qqxawvhevoif.jpg", width: 100, height: 100)%>
+
+<%= cl_image_tag(@message.photo.url, width: 100, height: 100)%>
+
+<%= cl_image_tag(@message.photo.identifier, :flags=>"attachment")%>
