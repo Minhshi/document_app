@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  after_create :send_message_email, only: [:create]
+  # after_create :send_message_email, only: [:create]
   belongs_to :user
   has_many :message_attachments
   # accepts_nested_attributes_for :message_attachments
@@ -10,8 +10,8 @@ class Message < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 end
 
-private
+# private
 
-def send_message_email
-  MessageMailer.message_email(self).deliver_now
-end
+# def send_message_email
+#   MessageMailer.message_email(self).deliver_now
+# end
