@@ -7,6 +7,7 @@ class MessageMailer < ApplicationMailer
   #
   def message_email(message_content)
     @message = message_content
-    mail to: "mpham@naver.com", subject: "New Message"
+    # attachments.inline['photo.png'] = File.read('path/to/photo.png')
+    mail(to: "mpham@naver.com", subject: "New Message")
   end
 end

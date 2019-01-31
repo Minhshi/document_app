@@ -8,6 +8,14 @@ class Message < ApplicationRecord
   validates :description, presence: true
 
   mount_uploader :photo, PhotoUploader
+  # after_save :check_metadata
+
+  #  def check_metadata
+  #   if self.photo.present? && self.photo.metadata.present?
+  #     exif = self.photo.metadata["photo_metadata"]
+  #     # ...
+  #   end
+  # end
 end
 
 # private
