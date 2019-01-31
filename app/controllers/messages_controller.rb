@@ -6,6 +6,11 @@ class MessagesController < ApplicationController
   def show
     @message = Message.find(params[:id])
     @message_attachment = MessageAttachment.new
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: "messages/show", pdf: "Show", dpi: 300, page_size: 'Letter'}   # Excluding ".pdf" extension.
+    end
   end
 
   def new

@@ -11,6 +11,8 @@ gem 'redis'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '1.10.1.pre.rc'
 gem 'postmark-rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
