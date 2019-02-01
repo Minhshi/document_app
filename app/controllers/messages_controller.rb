@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
   def show
     @message = Message.find(params[:id])
     authorize @message
-    @message_attachment = MessageAttachment.new
+    @message_attachments = @message.message_attachments.all
+    # @message_attachment = MessageAttachment.new
     respond_to do |format|
       format.html
       format.json
@@ -17,7 +18,8 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    @message_attachment = MessageAttachment.new
+    @message_attachment = @message.message_attachments.build
+    # @message_attachment = MessageAttachment.new
     authorize @message
     authorize @message_attachment
   end
@@ -27,6 +29,9 @@ class MessagesController < ApplicationController
     @message.user = current_user
     authorize @message
     if @message.save
+      params[:message_attachments]['attachment'].each do |a|
+        @message_attachment = @message.message_attachments.create!(:attachment => a)
+      end
       message_content = @message
       MessageMailer.message_email(message_content).deliver_now
       redirect_to messages_path
@@ -38,6 +43,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:topic, :description, :photo)
+    params.require(:message).permit(:topic, :description, message_attachments_attributes: [:id, :message_id, :attachment])
   end
 end

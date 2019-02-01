@@ -1,4 +1,4 @@
 class MessageAttachment < ApplicationRecord
   belongs_to :message
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :attachment, PhotoUploader
 end

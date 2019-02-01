@@ -3,7 +3,10 @@
 <%= simple_form_for(@message) do |message| %>
 <%= message.input :topic, collection: ["contract", "other"], selected: "contract" %>
 <%= message.input :description, placeholder: "description" %>
-<%= message.input :photo %>
-<%= message.input :photo_cache, as: :hidden %>
+<%#= message.input :photo %>
+<%#= message.input :photo_cache, as: :hidden %>
+<%= message.fields_for :message_attachments do |attachment| %>
+<%= attachment.file_field :attachment, multiple: true, name: "message_attachments[attachment][]" %>
+<% end %>
 <%= message.submit %>
 <% end %>
