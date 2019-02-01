@@ -13,6 +13,7 @@ gem 'cloudinary', '1.10.1.pre.rc'
 gem 'postmark-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem "pundit"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
