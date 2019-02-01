@@ -24,7 +24,7 @@
         <li><%= cl_image_tag(@message.photo, width:100, height:100) %></li>
       </ul>
       <% @message.message_attachments.each do |attachment| %>
-      <%= cl_image_tag(attachment.attachment_url, width:100, height:100) %>
+      <%= cl_image_tag(attachment.attachment_in_database, width:100, height:100) %>
       <% end %>
     </div>
   </body>
