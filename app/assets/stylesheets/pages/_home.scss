@@ -1,1 +1,49 @@
 // Specific CSS for your home-page
+.navbar {
+  // display: flex;
+  // align-items: center;
+  color: white;
+  background-color: #228288;
+  height: 80px;
+  margin-bottom: none !important;
+}
+.container-fluid {
+  display: flex;
+  // align-items: center;
+}
+.navbar-header {
+  margin-top: 16px;
+  // width: 50%;
+  flex: 1;
+}
+.navbar-brand {
+  // margin-left: 16px;
+  img {
+    height: 24px;
+  }
+}
+.navbar-brand-name {
+  color: white;
+}
+.navbar-authentication {
+  // width: 50%;
+  margin-top: 16px;
+  flex: 1;
+  align-items: center;
+  text-align: right;
+}
+.button-style {
+  width: 180px;
+  height: 40px;
+  color: white;
+  background-color: #770358;
+  border-radius: 4px;
+}
+.link-style a {
+  color: #770358;
+}
+.link-style:hover a {
+  text-decoration: none;
+  color: #770358;
+  opacity: 0.4;
+}

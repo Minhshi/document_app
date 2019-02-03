@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%#= react_component("Navbar") %>
+<%#= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
+<%#= react_component("Logo") %>
+<%#= react_component("TextBox") %>
+<%#= react_component("Button", buttonText: "Login") %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="text-box">
+      <h4>The best document app</h4>
+      <p>Upload and save your document easily</p>
+      </div>
+      <div class="authorization">
+        <div class="link-login">
+        <%= button_to "Login", new_user_session_path, class: "button-style" %>
+        </div>
+        <div class="link-sign-up">
+        <%= link_to "Sign Up", new_user_registration_path, class: "link-style" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

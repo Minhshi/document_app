@@ -15,16 +15,16 @@
     </div>
     <div id="content">
 
-      <h1>Hello</h1>
+      <!-- <h1>Hello</h1>
       <%= @message.topic %>
       <h1><%= @message.topic %></h1>
       <ul>
         <li><%= @message.topic %></li>
         <li><%= @message.description %></li>
         <li><%= cl_image_tag(@message.photo, width:100, height:100) %></li>
-      </ul>
+      </ul> -->
       <% @message.message_attachments.each do |attachment| %>
-      <%= cl_image_tag(attachment.attachment_in_database, width:100, height:100) %>
+      <%= cl_image_tag(attachment.attachment_in_database, width:2480, height:3508) %>
       <% end %>
     </div>
   </body>

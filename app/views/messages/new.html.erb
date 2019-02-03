@@ -1,12 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+
+
 <h1>New Message</h1>
 
 <%= simple_form_for(@message) do |message| %>
-<%= message.input :topic, collection: ["contract", "other"], selected: "contract" %>
-<%= message.input :description, placeholder: "description" %>
+<%= message.input :topic, collection: ["Contract", "Other"], selected: "contract" %>
+<%= message.input :description, placeholder: "Enter Your Message" %>
 <%#= message.input :photo %>
 <%#= message.input :photo_cache, as: :hidden %>
 <%= message.fields_for :message_attachments do |attachment| %>
 <%= attachment.file_field :attachment, multiple: true, name: "message_attachments[attachment][]" %>
 <% end %>
-<%= message.submit %>
+<%= message.submit "Send Message", class: "button-style" %>
 <% end %>
+    </div>
+  </div>
+</div>
